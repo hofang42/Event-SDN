@@ -18,6 +18,7 @@ module.exports = {
       if (!username || !password) {
         return res.render("login", {
           error: "Username and password required",
+          message: null,
         });
       }
 
@@ -25,6 +26,7 @@ module.exports = {
       if (!user) {
         return res.render("login", {
           error: "Invalid credentials",
+          message: null,
         });
       }
 
@@ -32,6 +34,7 @@ module.exports = {
       if (!isMatch) {
         return res.render("login", {
           error: "Invalid credentials",
+          message: null,
         });
       }
 
@@ -51,6 +54,7 @@ module.exports = {
     } catch (error) {
       res.render("login", {
         error: error.message,
+        message: null,
       });
     }
   },
