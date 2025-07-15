@@ -31,14 +31,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(sessionMiddleware);
 
-// Connect to MongoDB
+// Connect to MongoDB Atlas
 mongoose
-  .connect("mongodb://localhost:27017/EventPETest1206", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .connect(
+    "mongodb+srv://ringhost42:Thanhhoang42%40@sdn.zkuhflw.mongodb.net/SDN?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("MongoDB Atlas connection error:", err));
 
 // Routes - Order matters! Put registrationRoutes before userRouter
 app.use("/", registrationRoutes); // This handles /api/registration with session auth
