@@ -34,7 +34,7 @@ app.use(sessionMiddleware);
 // Connect to MongoDB Atlas
 mongoose
   .connect(
-    "mongodb+srv://ringhost42:Thanhhoang42%40@sdn.zkuhflw.mongodb.net/SDN?retryWrites=true&w=majority",
+    "mongodb+srv://ringhost42:Thanhhoang42@sdn.zkuhflw.mongodb.net/SDN?retryWrites=true&w=majority&appName=SDN",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
